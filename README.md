@@ -32,7 +32,7 @@ Once node has been installed you can download the files for the client software.
 
 ```bash
 cd ~
-git clone https://github.com/ArthurGuy/3dCamera.git
+git clone https://github.com/VxMed3DScanner/3dCamera.git
 ```
 
 The software can then be installed using the following commands
