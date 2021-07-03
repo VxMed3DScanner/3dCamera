@@ -75,7 +75,7 @@ socket.on('connect', function(){
     socket.emit('camera-online', {name: cameraName, ipAddress: ipAddress, version: version});
     
     // Setup a regular heartbeat interval
-    var heartbeatIntervalID = setInterval(heartbeat, 1000);
+    var heartbeatIntervalID = setInterval(heartbeat, 2000);
 });
 
 socket.on('take-photo', function(data){
@@ -203,8 +203,8 @@ function sendImage(code) {
 
 function takeImage() {
     var args = [
-        '-w', 3264,   // width
-        '-h', 2448,  // height
+        '-w', 2560,   // width
+        '-h', 1440,  // height
         '-t', 10000,  // how long should taking the picture take?
         '-q', 100,     // quality
         '-o', getAbsoluteImagePath()   // path + name
