@@ -205,7 +205,7 @@ function takeImage() {
     var args = [
         '-w', 3264,   // width
         '-h', 2448,  // height
-        '-t', 100,  // how long should taking the picture take?
+        '-t', 400,  // how long should taking the picture take?
         '-q', 100,     // quality
         '-o', getAbsoluteImagePath()   // path + name
     ];
