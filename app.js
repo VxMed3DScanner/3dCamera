@@ -75,7 +75,7 @@ socket.on('connect', function(){
     socket.emit('camera-online', {name: cameraName, ipAddress: ipAddress, version: version});
     
     // Setup a regular heartbeat interval
-    var heartbeatIntervalID = setInterval(heartbeat, 2000);
+    var heartbeatIntervalID = setInterval(heartbeat, 1000);
 });
 
 socket.on('take-photo', function(data){
@@ -185,7 +185,6 @@ function sendImage(code) {
     form.append('cameraName', cameraName);
     form.append('fileName', fileName);
     form.append('image', fs.createReadStream(getAbsoluteImagePath()));
-
     form.submit(httpServer + '/new-image', function(err, res) {
         if (err) {
             socket.emit('photo-error', {takeId:takeId});
@@ -211,7 +210,7 @@ function takeImage() {
     ];
     var imageProcess = spawn('arducamstill', args);
     // The image should take about 5 seconds, if its going after 10 kill it!
-    setTimeout(function(){ imageProcess.kill()}, 15000);
+    setTimeout(function(){ imageProcess.kill()}, 90000);
     
     imageProcess.on('exit', sendImage);
 }
