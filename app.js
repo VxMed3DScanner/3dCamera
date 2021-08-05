@@ -1,5 +1,5 @@
 
-var version = '1.5';
+var version = '1.6';
 
 var args = process.argv.slice(2);
 
@@ -176,7 +176,7 @@ function sendImage(code) {
         });
     });
     
-    var fileName = (photoStartTime/1000) + '.jpg';
+    var fileName = (Date.now() - lastReceiveTime) + '.jpg';
     
     // Post the image data via an http request
     var form = new FormData();
