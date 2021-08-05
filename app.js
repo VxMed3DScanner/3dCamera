@@ -1,5 +1,5 @@
 
-var version = '3.2';
+var version = '3.5';
 
 var args = process.argv.slice(2);
 
@@ -176,7 +176,6 @@ function sendImage(code) {
     });
     
     var fileName = (Date.now() - photoStartTime) + '.jpg';
-    setTimeout(() => {  console.log("World!"); }, Math.floor(Math.random() * 60000));
     // Post the image data via an http request
     var form = new FormData();
     form.append('takeId', takeId);
@@ -204,7 +203,7 @@ function takeImage() {
         '-w', 3840,   // width
         '-h', 2160,  // height
         '-t', 9000,  // how long should taking the picture take?
-        '-q', 100,     // quality
+        '-q', 95,     // quality
         '-o', getAbsoluteImagePath()   // path + name
     ];
     var imageProcess = spawn('arducamstill', args);
