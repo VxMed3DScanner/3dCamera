@@ -1,5 +1,5 @@
 
-var version = '2.1';
+var version = '2.5';
 
 var args = process.argv.slice(2);
 
@@ -201,15 +201,15 @@ function sendImage(code) {
 
 function takeImage() {
     var args = [
-        '-w', 2560,   // width
-        '-h', 1440,  // height
-        '-t', 4000,  // how long should taking the picture take?
+        '-w', 3840,   // width
+        '-h', 2160,  // height
+        '-t', 10000,  // how long should taking the picture take?
         '-q', 100,     // quality
         '-o', getAbsoluteImagePath()   // path + name
     ];
     var imageProcess = spawn('arducamstill', args);
     // The image should take about 5 seconds, if its going after 10 kill it!
-    setTimeout(function(){ imageProcess.kill()}, 10000);
+    setTimeout(function(){ imageProcess.kill()}, 20000);
     
     imageProcess.on('exit', sendImage);
 }
