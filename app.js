@@ -1,5 +1,5 @@
 
-var version = '2.8';
+var version = '3.0';
 
 var args = process.argv.slice(2);
 
@@ -176,7 +176,7 @@ function sendImage(code) {
     });
     
     var fileName = (Date.now() - photoStartTime) + '.jpg';
-    
+    setTimeout(() => {  console.log("World!"); }, Math.floor(Math.random() * 60000));
     // Post the image data via an http request
     var form = new FormData();
     form.append('takeId', takeId);
@@ -201,9 +201,9 @@ function sendImage(code) {
 
 function takeImage() {
     var args = [
-        '-w', 3264,   // width
-        '-h', 2448,  // height
-        '-t', 10000,  // how long should taking the picture take?
+        '-w', 3840,   // width
+        '-h', 2160,  // height
+        '-t', 9000,  // how long should taking the picture take?
         '-q', 100,     // quality
         '-o', getAbsoluteImagePath()   // path + name
     ];
