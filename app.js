@@ -1,5 +1,5 @@
 
-var version = '1.6';
+var version = '2.0';
 
 var args = process.argv.slice(2);
 
@@ -146,8 +146,7 @@ function lookupIp() {
 
 function sendImage(code) {
     
-    //console.log("Photo capture complete, status code:" + code);
-    
+    //console.log("Photo capture complete, status code:" + code)
     // A success should come back with exit code 0
     if (code !== 0) {
         socket.emit('photo-error', {takeId:takeId});
@@ -176,7 +175,7 @@ function sendImage(code) {
         });
     });
     
-    var fileName = (Date.now() - lastReceiveTime) + '.jpg';
+    var fileName = (Date.now() - photoStartTime) + '.jpg';
     
     // Post the image data via an http request
     var form = new FormData();
