@@ -1,5 +1,5 @@
 
-var version = '2.5';
+var version = '2.6';
 
 var args = process.argv.slice(2);
 
@@ -201,8 +201,8 @@ function sendImage(code) {
 
 function takeImage() {
     var args = [
-        '-w', 3840,   // width
-        '-h', 2160,  // height
+        '-w', 4160,   // width
+        '-h', 3120,  // height
         '-t', 10000,  // how long should taking the picture take?
         '-q', 100,     // quality
         '-o', getAbsoluteImagePath()   // path + name
