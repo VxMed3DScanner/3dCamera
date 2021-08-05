@@ -1,5 +1,5 @@
 
-var version = '3.0';
+var version = '3.2';
 
 var args = process.argv.slice(2);
 
@@ -75,7 +75,7 @@ socket.on('connect', function(){
     socket.emit('camera-online', {name: cameraName, ipAddress: ipAddress, version: version});
     
     // Setup a regular heartbeat interval
-    var heartbeatIntervalID = setInterval(heartbeat, 1000);
+    var heartbeatIntervalID = setInterval(heartbeat, 250);
 });
 
 socket.on('take-photo', function(data){
