@@ -1,5 +1,5 @@
 
-var version = '4.2';
+var version = '4.5';
 
 var args = process.argv.slice(2);
 
@@ -200,10 +200,10 @@ function sendImage(code) {
 
 function takeImage() {
     var args = [
-        '-w', 1920,   // width
-        '-h', 1080,  // height
+        '-w', 3264,   // width
+        '-h', 2448,  // height
         '-t', 9000,  // how long should taking the picture take?
-        '-q', 95,     // quality
+        '-q', 100,     // quality
         '-o', getAbsoluteImagePath()   // path + name
     ];
     var imageProcess = spawn('arducamstill', args);
